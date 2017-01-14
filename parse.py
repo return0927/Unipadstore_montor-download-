@@ -22,9 +22,10 @@ def getdata():
     downloadCount
     """
     ret = list()
+    ret.append("\n   totalCount : %s\n\n" % "{:,}".format(totalc))
     for d in packs:
-        ret.append("%-40s | %-10s | %s" % (d['title'], d['downloadCount'], d['producerName']))
-    ret.append("totalCount : %s" % totalc)
+        ret.append("   %-40s | %10s | %s" % (d['title'], "{:,}".format(int(d['downloadCount'])), d['producerName']))
+    
     return ret
 
 def updatevalue():
